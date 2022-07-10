@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Post Man By Ankit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+        /* For givving a scroll bar */
+        #resposeprism {
+            max-height: 500px;
+
+        }
+
+        body {
+            background-color: lightskyblue;
+        }
+        #contact{
+          background-color: deepskyblue;
+        }
+        button a{
+            text-decoration: none;
+            color: antiquewhite;
+        }
+    </style>
+    <link rel="stylesheet" href="prism.css">
+    <link rel="stylesheet" href="ankit.css">
+    <link rel="shortcut icon" href="fav.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About Us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">contact Us</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="mx-auto" style="width: 600px;">Welcome To Pro Postman</h1>
+    </div>
+    <div class="continer">
+        <!-- url Box -->
+        <div class="form-group row">
+            <label for="url" class="col-sm-2 col-form-label "><strong>URL</strong></label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="url" aria-describedby="url">
+                <small id="url" class="form-text text-muted">We'll try To Give You Better Result.</small>
+            </div>
+
+        </div>
+
+        <!-- this is Fold set or url section  and this request type -->
+        <fieldset class="form-group row">
+            <legend class="col-form-label col-sm-2 float-sm-left pt-0"><strong>Request Type</strong></legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="reqesttype" id="GET" value="GET" checked>
+                    <label class="form-check-label" for="GET">
+                        GET
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="reqesttype" id="POST" value="POST">
+                    <label class="form-check-label" for="POST">
+                        POST
+                    </label>
+                </div>
+
+            </div>
+        </fieldset>
+
+
+
+        <!-- This is Containtype Box -->
+        <fieldset class="form-group row">
+            <legend class="col-form-label col-sm-2 float-sm-left pt-0"><strong>content Type</strong></legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="contentype" id="jsonred" value="json" checked>
+                    <label class="form-check-label" for="reqjson">
+                        JSON
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="contentype" id="paramred" value="params">
+                    <label class="form-check-label" for="paramred">
+                        Custome Parameter
+                    </label>
+                </div>
+
+            </div>
+        </fieldset>
+
+
+        <!-- Parameter Box  this willhide when json selected-->
+        <div id="parameterbox">
+            <div class="form-row">
+                <label for="" class="col-sm-2 col-form-label "><strong>Parameter</strong></label>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" id="parameterKey1" placeholder="Enter Parameter 1 key">
+                </div>
+                <div class="form-group col-md-4">
+
+                    <input type="text" class="form-control" id="parameterValue1" placeholder="Enter Parameter 1 value">
+                </div>
+                <button class="btn btn-success" id="add">add</button>
+
+                <div id="params">
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Json Box and this will hide when para ption selected  -->
+
+        <div class="jsonbox  form-group row mx-3 " id="reqjson">
+            <label for="requestjsom" class="col-sm-2 col-form-label"><strong>Enter Request Json here</strong></label>
+            <div class="col-sm-8 mx-3">
+                <textarea class="form-control mx-2" name="requestjsom" id="requestjsom" rows="3"></textarea>
+            </div>
+        </div>
+        <button class="btn btn-secondary mx-2 my-2" id="submit">Submit</button>
+        <!-- this is response box  -->
+        <div class="response  form-group row mx-3">
+            <label for="response" class="col-sm-2 col-form-label"><strong>Response will show here</strong></label>
+            <div class="col-sm-6 mx-3">
+                <!-- <textarea class="form-control mx-2" name="response" 
+                 id="response" rows="5" cols="5"></textarea> -->
+                <pre class="language-javascript" id="pre"><code class="language-javascript" id="resposeprism">
+
+
+                 </code></pre>
+            </div>
+        </div>
+    </div>
+
+
+
+    <nav class="navbar bg-dark navbar-dark my-4" id="contact"> 
+        <form class="container-fluid justify-content-start">
+            <button class="btn btn-outline-success me-2" type="button"><a href="morewebsite.html" target="_blank">Other website Made by
+                    me</a></button>
+            <button class="btn btn-sm btn-outline-secondary" type="button"><a
+                    href="https://www.instagram.com/iankitd/" target="_blank">Contact US</a></button>
+            <button class="btn btn-sm btn-outline-secondary" type="button"><a href="https://github.com/ankitdevlop" target="_blank">About US</a></button>
+        </form>
+    </nav>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
+    <script src="app6.js"></script>
+    <script src="prism.js"></script>
+</body>
+
+</html>
